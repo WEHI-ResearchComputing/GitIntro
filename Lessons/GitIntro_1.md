@@ -13,18 +13,38 @@ Research Computing
 * Part 4: Overview of advanced workflows
 ---
 
+# Create a GitHub account
+
+Please create a GitHub account:
+
+https://github.com/
+
+---
+
+# Requirements
+* WiFi access
+* Mac Terminal: requires command line tools from managed software centre
+* Windows git client
+* ssh/putty into unix500: `module load git`
+
+---
 
 # Slide Respository
-* A copy of these slides and sample code is available at: `https://github.com/WEHI-ResearchComputing/GitIntro`
+* A copy of these slides and sample code is available at: `https://github.com/WEHI-ResearchComputing/GitIntro`s
 * Send me an email: `thomas.e@wehi.edu.au`
 * Visit our web site: `https://rc.wehi.edu.au`
 ---
 
 # Part 1: What problem(s) does git solve?
 * How can you keep track of the changes to your software?
+	* Who did what and when?
+	* Undo on steroids
 * How can several people work on the same software without interfering with other?
 * How can those people work at different locations without access to the same filesystems?
-* How can you do this with software consisting of tens of millions of lines of code?
+* How can you do this with projects consisting of tens of millions of lines of code?
+	* fast
+	* robust 
+* Keeps your code safe
 ---
 
 # Part 1: What is git?
@@ -69,7 +89,7 @@ You can create these in any order.
 # Part 2: Make a local copy
 1. Click the green `clone or download` and copy the link
 2. Open a terminal, `cd <some convenient directory>`
-3. `git clone <paste URL from GitHuB>`
+3. `git clone <paste URL from GitHub>`
 4. `cd <repo-name>`
 5. `ls -la`
 
@@ -94,7 +114,8 @@ You can create these in any order.
 * Have another look: `git status` 
 * `git commit -a -m "Create important test"`
 * Have another look: `git status`
-* `git push`
+	* A commit is a point in the history of the repo with a unique identifier 
+* `git push` (you may need to enter credentials)
 * Have another look: `git status`
 
 ---
@@ -110,24 +131,26 @@ You can create these in any order.
 
 # Part 2: Resolving conflicts
 ## Scenario: Two people make conflicting changes
-* Change the local file
+* Change the local file and commit
 * Change the remote in a different way
 * `git pull`
-	* **Note:** Always pull first!
 * Merge Conflict!
 * Resolve conflict manually
 * `git add <file`>
 * `git commit -m "..."`
 * `git push`
 
+**Note:** Always pull first!
+
 ---
 
 # Part 2: Branching
-## Create a branch to work on independently 
+## Create a branch to work on independently
 
 * With a branch you can work independently
 	* Not effect other users
 	* Maintain the integrity of the main branch
+	* Fix defects independently of adding features
 * `git branch` 
 * `git branch exciting-feature`
 * `git checkout exciting-feature`
@@ -155,7 +178,9 @@ You can create these in any order.
 * `git add ...`; `git commit ...`
 * `git branch master`
 * `git merge exciting-feature`
-* `git pull`; `git push`
+* `git push`
+
+**Note:** Always merge master into your branch first!
 
 ---
 
@@ -165,7 +190,7 @@ You can create these in any order.
 | `git clone`    | make a local copy of a remote repo        |
 | `git status`   | current state of the *local* repo         |
 | `git add`      | add a file to the index, ready to commit  |
-| `git commit`   | create a new check point in the repo's history |
+| `git commit`   | create a new point in the repo's history  |
 | `git pull`     | update the local repo from the remote     |
 | `git push`     | update the remote repo from the local     |
 | `git branch`   | create and view branches                  |
@@ -182,8 +207,9 @@ You can create these in any order.
 | `git diff`             | difference in a file between 2 commits    |
 | `git <command> --help` | Get help                                  |
 
----
+**Google probably has the answer to your git questions.**
 
+---
 
 # Part 2: Be careful
 > With great power comes great responsibility - Uncle Ben or maybe Voltaire
@@ -204,9 +230,10 @@ Things that can go wrong
 * JetBrains IDEs for Python, Javascript, Java, Scala, etc
 * Eclipse and derivatives for Java, C++
 * Microsoft IDEs
+* Xcode
 
 ---
-# Part 3: Pull requests
+# Part 4: Pull requests
 * Where collaborators have different levels of ability code may need to be reviewed before incorporated into important branches.
 * Pull requests from source branch to a target branch:
 	* notify other members of the team that there is branch ready to merge
@@ -215,7 +242,7 @@ Things that can go wrong
 
 ---
 
-# Part 3: Contributing to other projects
+# Part 4: Contributing to other projects
 For example, adding features or fixing defects in popular software
 1. Discuss first the owners
 2. Fork the respository in the GitHib
@@ -223,8 +250,6 @@ For example, adding features or fixing defects in popular software
 4. Regularly update your fork with the upstream
 5. Send a pull request to the owning team
 6. Convince them to merge your updates.
+---
 
-
-
-
-
+# That's it!
